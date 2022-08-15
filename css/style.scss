@@ -2,20 +2,7 @@
 @font-face {
   font-display: swap;
   font-family: 'SF';
-  font-weight: 300;
   src: url('../font/SF.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'SF';
-  font-weight: 500;
-  src: url('../font/SF-Medium.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'SF';
-  font-weight: 400;
-  src: url('../font/SF-Regular.woff2') format('woff2');
 }
 @font-face {
   font-display: swap;
@@ -37,11 +24,14 @@
 html{
   background: var(--backgCol);
   scrollbar-width: none;
+  color: #fff;
 }
 
 * {
   margin: 0;
   padding: 0;
+  font-family: 'SF', serif;
+  font-weight: 300;
 }
 
 img {
@@ -105,15 +95,12 @@ img {
   right: 0;
   margin-top: 10px;
   margin-right: 10px;
-  font-size: 0;
 }
 
 .header-menu li{
   display: inline-block;
   padding: 10px 15px;
   list-style-type: none;
-  font-family: 'SF', serif;
-  font-weight: 300;
   font-size: 22px;
 
   color: #F5F5F5;
@@ -152,7 +139,6 @@ img {
 .text__name {
   font-family: 'Apex', serif;
   font-size: 105px;
-  font-weight: 200;
 
   color: #69C89A;
 
@@ -161,9 +147,6 @@ img {
 }
 
 .text__desc {
-  font-family: 'SF', serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 40px;
   line-height: 57px;
 
@@ -224,11 +207,6 @@ img {
   animation: wave 5s linear infinite;
 }
 
-//.wave:nth-of-type(2) {
-//  opacity: .6;
-//  animation: wave 26s cubic-bezier(0.36, 0.45, 0.63, 0.53) reverse infinite;
-//}
-
 @keyframes wave {
   0% {
     transform: translateX(0);
@@ -240,46 +218,12 @@ img {
 //#endregion
 
 //#region Text
-.text-500{
-  font-family: 'SF', serif;
-  font-weight: 300;
+section > h5{
   font-size: 48px;
   padding-top: 50px;
 
-  color: #FFFFFF;
   width: 100%;
   text-align: center;
-}
-
-.text-600{
-  width: 100%;
-  height: 38px;
-
-  font-family: 'SF', serif;
-  font-weight: 300;
-  font-size: 32px;
-  line-height: 38px;
-  align-items: center;
-  text-align: center;
-
-  color: #FFFFFF;
-  margin-top: 115px;
-}
-
-.text-800{
-  width: 95%;
-  height: 157px;
-
-  font-family: 'SF', serif;
-  font-weight: 300;
-  font-size: 23px;
-  line-height: 29px;
-  align-items: center;
-  text-align: center;
-
-  color: #C8C8C8;
-  margin-top: 8px;
-  margin-left: 10px;
 }
 //#endregion
 
@@ -315,6 +259,23 @@ img {
   border-radius: 15px;
   bottom: 0;
   transition: box-shadow .4s;
+
+  h6{
+    font-size: 32px;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 115px;
+  }
+
+  p{
+    padding: 5px;
+
+    font-size: 23px;
+    line-height: 29px;
+    text-align: center;
+    color: #C8C8C8;
+  }
 }
 
 .panel__icon{
@@ -398,7 +359,6 @@ img {
 
 .flip-card > .front p{
   position: absolute;
-  font-family: 'SF', serif;
   font-size: 32px;
   text-align: center;
 
@@ -406,14 +366,10 @@ img {
   left: 50%;
   bottom: 20px;
   transform: translateX(-50%);
-  color: #FFFFFF;
 }
 
 .flip-card > .back p{
   position: absolute;
-  font-family: 'SF', serif;
-  font-style: normal;
-  font-weight: 300;
   font-size: 22px;
   text-align: center;
 
@@ -496,8 +452,6 @@ img {
   opacity: 0;
   transition: opacity 1s, transform 1s;
   p{
-    font-family: 'SF', serif;
-    font-weight: 400;
     font-size: 48px;
     text-align: center;
     margin-bottom: 20px;
@@ -514,7 +468,6 @@ img {
     border-radius: 49px;
     border:none;
 
-    font-family: 'SF', serif;
     font-size: 24px;
     color: rgba(245, 245, 245, 0.7);
 
@@ -588,22 +541,16 @@ img {
 
 .popup::after{
   content: attr(tool-tip2);
+  position: absolute;
   width: 180px;
 
-  position: absolute;
+  right: calc(50% - 90px); bottom: 0;
 
-  right: calc(50% - 90px);
-  bottom: 0;
-
-  font-family: 'SF', serif;
   font-size: 11px;
-  font-weight: 300;
-
   color: rgba(200, 200, 200, 0.8);
 
   transition: opacity .4s, transform .4s, bottom .4s;
-  opacity: 0;
-  transform: scale(0);
+  opacity: 0; transform: scale(0);
 }
 .popup:hover::after{
   opacity: 1;
@@ -615,18 +562,13 @@ img {
   content: attr(tool-tip);
   position: absolute;
 
-  right: calc(50% - 93px);
-
-  bottom: 0;
+  right: calc(50% - 93px); bottom: 0;
 
   width: 186px;
   height: 32px;
 
-  font-family: 'SF', serif;
-  font-weight: 400;
-  font-size: 14px;
+  font-size: 14px; color: #e1e1e1;
 
-  color: #C8C8C8;
   background: rgba(73, 73, 73, 0.8);
   border-radius: 8px;
 
@@ -650,26 +592,19 @@ footer{
 }
 
 .tooltip{
-  position: absolute;
+  position: absolute; display: block;
   z-index: 9;
-  top: -36px;
-  left: 50%;
+  top: -36px; left: 50%;
   transform: translateX(-50%);
-
-  padding: 0 25px 0 25px;
 
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
 
   border-radius: 15px;
 
-  display: block;
-
-  font-family: 'SF', serif;
-  font-weight: 300;
   font-size: 48px;
   line-height: 76px;
-  color: #fff;
+  padding: 0 25px 0 25px;
 }
 
 .darkness{
@@ -715,9 +650,7 @@ footer{
   width: 340px;
 }
 
-.form-header{
-  font-family: 'SF', serif;
-  font-weight: 400;
+.form-header {
   font-size: 28px;
   text-align: center;
   padding-bottom: 10px;
@@ -726,14 +659,8 @@ footer{
 }
 
 .forms-or{
-  display: block;
-  font-family: 'SF', serif;
-  font-weight: 400;
   font-size: 24px;
-  text-align: center;
-  padding-top: 43px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 43px 25px 0 25px;
   color: #B4B4B4;
 }
 
@@ -744,24 +671,18 @@ footer{
 
 .form-btn{
   display: block;
-
   text-decoration: none;
-  font-family: 'SF', serif;
-  font-weight: 300;
+
   font-size: 24px;
   color: #C8C8C8;
   line-height: 58px;
-
-  height: 58px;
 
   transition: background-color .6s;
   background-color: #333;
 
   img{
     vertical-align: middle;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 2px;
+    padding: 0 10px 2px 10px;
   }
 }
 
@@ -817,8 +738,6 @@ footer{
     max-height: 180px;
     word-wrap: anywhere;
 
-    font-family: 'SF', serif;
-    font-weight: 300;
     font-size: 24px;
     text-align: center;
     color: #C8C8C8;
@@ -834,19 +753,15 @@ footer{
     transform: translateX(-50%) translateY(-50%);
     width: 100%;
     color: #8C8C8C;
-    font-weight: 300;
     font-size: 24px;
   }
 }
 
 .feedback{
-  font-family: 'SF', serif;
-  font-weight: 300;
   font-size: 24px;
 
   line-height: 56px;
 
-  height: 56px;
   width: calc(100% - 4px);
 
   color: #C8C8C8;
