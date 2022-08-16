@@ -109,7 +109,6 @@ nav a:hover {
 .main {
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: gold;
 }
 
 .main__context {
@@ -139,7 +138,6 @@ nav a:hover {
 
 .context__ocean {
   position: absolute;
-  background-color: red;
   bottom: 0;
   height: 88px;
   width: 100%;
@@ -760,6 +758,94 @@ footer {
 }
 .hide-after::after {
   display: none;
+}
+
+@media (pointer: none), (pointer: coarse) {
+  .work {
+    overflow: visible;
+  }
+  .work .context__widgets {
+    opacity: 1;
+    right: 0;
+  }
+  .work .context__info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .work .preview__context {
+    opacity: 1;
+  }
+  #scroll-bar {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .forms-wrapper {
+    flex-direction: column;
+  }
+  footer {
+    height: 1000px;
+  }
+  .forms-or {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 700px) {
+  #logo {
+    display: none !important;
+  }
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    right: 0;
+  }
+}
+@media (max-width: 549px) {
+  .work, .preview__context {
+    width: 320px;
+  }
+}
+@media (max-width: 500px) {
+  .text-500 {
+    font-size: 40px;
+  }
+  .context__name {
+    font-size: 100px;
+  }
+  .context__desc {
+    font-size: 35px;
+  }
+}
+@media (max-width: 400px) {
+  .text-500 {
+    font-size: 35px;
+  }
+  .context__name {
+    font-size: 95px;
+  }
+  .context__desc {
+    font-size: 30px;
+  }
+}
+@media (max-width: 349px) {
+  .panel__wrapper {
+    width: 320px;
+  }
+  .panel__icon {
+    width: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 339px) {
+  .form-wrapper {
+    width: 320px;
+  }
+  .message {
+    width: 316px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

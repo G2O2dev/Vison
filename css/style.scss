@@ -130,7 +130,6 @@ nav{
 .main{
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  background-color: gold;
 }
 
 .main__context {
@@ -165,7 +164,6 @@ nav{
 
 .context__ocean{
     position: absolute;
-    background-color: red;
     bottom: 0;
     height: 88px;
     width: 100%;
@@ -865,4 +863,4 @@ footer{
   display: none;
 }
 
-//@import "adaptive";
+@import "adaptive";
