@@ -165,9 +165,10 @@ nav{
 
 .context__ocean{
     position: absolute;
-  background-color: red;
+    background-color: red;
+    left: 0;
     bottom: 0;
-    height: 90px;
+    height: 88px;
     width: 100%;
     overflow-x: hidden;
   svg{
