@@ -1,6 +1,3 @@
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 var reveals = document.querySelectorAll(".scrollAnim");
 async function updateScroll() {
 
@@ -46,11 +43,6 @@ function updatePlaceholder(){
 function redirectFocus(){
     document.getElementById("msg-txt").focus();
 }
-
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
 
 if(!navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.getComputedStyle(document.querySelector('.work')).overflow != "visible"){
     var s;

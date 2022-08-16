@@ -1,5 +1,5 @@
 var scrollAnim;
-document.querySelectorAll('[href^="#"]').forEach(function(el){
+document.querySelectorAll('a[href^="#"]').forEach(function(el){
     el.addEventListener("click", function(event) {
         var target = document.querySelector(this.getAttribute("href"));
         if (target != null) {
