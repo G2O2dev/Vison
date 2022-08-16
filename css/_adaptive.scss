@@ -41,16 +41,11 @@
 		display: none !important;
 	}
 
-	.header-menu{
-		display: flex;
-		align-items: center;
+	nav{
 		justify-content: center;
 		flex-wrap: wrap;
 		width: 100%;
-	}
-
-	.header-menu {
-		margin-right: 0;
+		right: 0;
 	}
 }
 
@@ -65,11 +60,11 @@
 		font-size: 40px;
 	}
 
-	.text__name{
+	.context__name{
 		font-size: 100px;
 	}
 
-	.text__desc{
+	.context__desc{
 		font-size: 35px;
 	}
 }
@@ -79,11 +74,11 @@
 		font-size: 35px;
 	}
 
-	.text__name{
+	.context__name{
 		font-size: 95px;
 	}
 
-	.text__desc{
+	.context__desc{
 		font-size: 30px;
 	}
 }
