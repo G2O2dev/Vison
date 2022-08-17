@@ -291,11 +291,11 @@
     <div class="form-wrapper scrollAnim fade-bottom">
       <p class="form-header">Заполните форму:</p>
       <form action="#" method="get" enctype="multipart/form-data" class="form">
-        <input class="feedback" placeholder="Куда нам ответить" type="text">
+        <input type="text" class="feedback" placeholder="Куда нам ответить">
         <div class="message" onclick="redirectFocus()">
           <p id="msg-txt" contenteditable="true" oninput="updatePlaceholder()" data-text="Сообщение/вопрос:" class=""></p>
         </div>
-        <a href="" class="form-btn send">Отправить</a>
+        <button type="submit" class="form-btn send">Отправить</button>
       </form>
     </div>
 
