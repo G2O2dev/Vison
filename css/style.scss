@@ -240,31 +240,14 @@ section > h5{
   padding-bottom: 50px;
 }
 
-.we-do__panels{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-.panel__wrapper{
-  position: relative;
-  height: 310px;
-  width: 350px;
-
-  margin-top: 100px;
-}
-
 .panel{
-  position: absolute;
-  width: 100%;
+  position: relative;
+  width: 350px;
   height: 315px;
+  margin-top: 45px;
 
   background: #141414;
   border-radius: 15px;
-  bottom: 0;
   transition: box-shadow .4s;
 
   h6{
@@ -297,32 +280,27 @@ section > h5{
   border-radius: 20px;
 
   transition: box-shadow .4s, transform .6s;
+
+  img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+.panel:hover .panel__icon{
+  transform: translateY(-15px);
 }
 
-.panel__svg{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.panel__wrapper:hover .panel{
+.panel:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.panel__wrapper:hover .panel__icon{
-  transform: translateY(-20px);
-}
+
 //#endregion
 
 //#region Skills
 
 #skills{
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
   padding-bottom: 50px;
 }
 
@@ -332,7 +310,6 @@ section > h5{
   height: 220px;
   perspective: 3000px;
   transition: all 0.4s ease-in;
-  margin-top: 50px;
 }
 
 .flip-card .front, .flip-card .back
@@ -397,13 +374,14 @@ section > h5{
   padding-bottom: 95px;
 }
 
-.works{
+.articles{
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  gap: 50px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
+
+  max-width: 1600px;
+  margin: 50px auto 0 auto;
 }
 
 .work{
