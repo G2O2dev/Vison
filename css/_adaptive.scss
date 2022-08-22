@@ -3,17 +3,17 @@
 	.work{
 		overflow: visible;
 
-		.context__widgets{
+		.preview__widgets{
 			opacity: 1;
 			right: 0;
 		}
 
-		.context__info{
+		.preview__info{
 			transform: translateY(0);
 			opacity: 1;
 		}
 
-		.preview__context{
+		.preview{
 			opacity: 1;
 		}
 	}
@@ -23,6 +23,19 @@
 	}
 }
 
+@media (max-width: 999px) {
+	.modal-wrapper{
+		grid-template-columns: 550px;
+		grid-template-rows: 380px auto 104px;
+		grid-template-areas:
+		  "s"
+		  "d"
+		  "b";
+	}
+	.modal-work{
+		width: 590px;
+	}
+}
 @media (max-width: 768px) {
 	.forms-wrapper{
 		flex-direction: column;
@@ -50,7 +63,7 @@
 }
 
 @media (max-width: 549px) {
-	.work, .preview__context {
+	.work, .preview {
 		width: 320px;
 	}
 }
@@ -84,7 +97,7 @@
 }
 
 @media (max-width: 349px) {
-	.panel__wrapper{
+	.panel{
 		width: 320px;
 	}
 	.panel__icon{
