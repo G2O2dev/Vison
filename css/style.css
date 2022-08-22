@@ -1001,6 +1001,15 @@ footer {
     width: 320px;
   }
 }
+@media (max-width: 589px) {
+  .modal-wrapper {
+    grid-template-columns: calc(100vw - 40px);
+    grid-template-rows: auto auto auto;
+  }
+  .modal-work {
+    width: 100vw;
+  }
+}
 @media (max-width: 500px) {
   .text-500 {
     font-size: 40px;
