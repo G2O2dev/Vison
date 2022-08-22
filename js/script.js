@@ -60,9 +60,9 @@ function openModal(modalName){
     document.body.style.overflow = 'hidden';
 
     modalBg.classList.add("modal-bg-open");
-    modals.classList.add("show-modals");
+    modals.classList.add("dp-grid");
     modal.classList.add("modal-work--show");
-    modal.classList.add("ds-block");
+    modal.classList.add("dp-block");
 
     setTimeout(function (){
         modal.classList.add('visible');
@@ -98,20 +98,27 @@ function hideModal(){
         modalBg.classList.remove("modal-bg-open");
         modalBg.classList.remove("modal-bg-hide");
 
-        modals.classList.remove("show-modals");
+        modals.classList.remove("dp-grid");
 
         modal.classList.remove("hide-modal");
         modal.classList.remove("modal-work--hide");
-        modal.classList.remove("ds-block");
+        modal.classList.remove("dp-block");
         document.body.style.overflow = 'visible';
         animation = 0;
         },3000);
 }
 
-function loadScript(path){
+function loadScript(src){
     var s = document.createElement('script');
-    s.src = path;
+    s.src = src;
     document.head.appendChild(s);
+}
+function loadStyle(src){
+    var cssFa = document.createElement('link');
+    cssFa.href = src;
+    cssFa.rel = 'stylesheet';
+    cssFa.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(cssFa);
 }
 
 if(!navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.getComputedStyle(document.querySelector('.work')).overflow != "visible"){

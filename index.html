@@ -5,57 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>VISON</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/swiper.css"/>
 </head>
 <body>
 <div id="scroll-bar"></div>
 <section class="main">
-  <div id="logo" class="scrollAnim fade-top">
-    <svg class="logo__icon" width="41" height="40" fill="none"><path d="M40.309.656c-.212-.203-.53-.3-.914-.3-3.164 0-11.734 6.329-18.937 13.722-4.107 4.22-6.204 7.17-7.021 9.3.625.212 1.25.503 1.894.89.5.3.972.658 1.395 1.055a7.704 7.704 0 0 1 1.847 2.67c2.096-.938 4.933-3.106 8.886-7.17C35.548 12.5 42.242 2.523 40.31.656z" fill="#69C89A"/><path d="M14.447 25.342c-1.106-.658-2.145-1.045-3.155-1.17a6.116 6.116 0 0 0-3.03.426c-2.972 1.199-3.26 4.024-3.51 6.521-.318 3.097-.673 5.032-3.79 5.71a1.198 1.198 0 0 0-.961 1.219 1.21 1.21 0 0 0 1.029 1.161c1.75.261 3.404.387 4.924.387 3.328 0 6.069-.61 8.146-1.81 1.914-1.103 3.184-2.67 3.694-4.528a6.75 6.75 0 0 0 .096-3.097c-.385-1.935-1.607-3.716-3.444-4.819z" fill="#4A8C6C"/></svg>
-    <div class="logo__text-wrapper">
-      <p class="logo__text">VISON</p>
+  <div class="logo scrollAnim fade-top">
+    <svg width="41" height="40"><path d="M40.309.656c-.212-.203-.53-.3-.914-.3-3.164 0-11.734 6.329-18.937 13.722-4.107 4.22-6.204 7.17-7.021 9.3.625.212 1.25.503 1.894.89.5.3.972.658 1.395 1.055a7.704 7.704 0 0 1 1.847 2.67c2.096-.938 4.933-3.106 8.886-7.17C35.548 12.5 42.242 2.523 40.31.656z" fill="#69C89A"/><path d="M14.447 25.342c-1.106-.658-2.145-1.045-3.155-1.17a6.116 6.116 0 0 0-3.03.426c-2.972 1.199-3.26 4.024-3.51 6.521-.318 3.097-.673 5.032-3.79 5.71a1.198 1.198 0 0 0-.961 1.219 1.21 1.21 0 0 0 1.029 1.161c1.75.261 3.404.387 4.924.387 3.328 0 6.069-.61 8.146-1.81 1.914-1.103 3.184-2.67 3.694-4.528a6.75 6.75 0 0 0 .096-3.097c-.385-1.935-1.607-3.716-3.444-4.819z" fill="#4A8C6C"/></svg>
+    <div class="logo__text">
+      <p>VISON</p>
     </div>
   </div>
-
   <nav>
     <a href="#our-works" class="scrollAnim fade-top">Наши работы</a>
     <a href="#skills" class="scrollAnim fade-top">Навыки</a>
     <a href="#footer" class="scrollAnim fade-top">Заказать</a>
   </nav>
 
-
   <div class="main__context">
       <h1 class="context__name">VISON</h1>
       <h6 class="context__desc">Профессиональная верстка и дизайн сайтов</h6>
   </div>
+
   <div class="context__ocean">
     <svg viewbox="0 0 799 88" width="100%" height="90" preserveAspectRatio="none">
       <defs>
-        <style type="text/css">
-          .wave {
-            animation: wave 10s linear infinite;
-          }
-
-          .wave2 {
-            opacity: .6;
-            animation: wave 18s linear reverse infinite;
-          }
-
-          @keyframes wave {
-            0% {
-              transform: translateX(0%);
-            }
-
-            100% {
-              transform: translateX(100%);
-            }
-          }
-        </style>
         <path id='sineWave' fill="#232323" d="M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z" />
       </defs>
       <use class="wave" href="#sineWave" />
       <use class="wave" x="-100%" href="#sineWave" />
-
       <use class="wave2" href="#sineWave" />
       <use class="wave2" x="-100%" href="#sineWave" />
     </svg>
@@ -73,36 +50,36 @@
   <div class="articles">
     <article class="panel scrollAnim fade-bottom">
       <div class="panel__icon">
-        <img class="panel__svg" src="img/Code.svg" loading="lazy">
+        <img src="img/Code.svg" loading="lazy" alt="">
       </div>
       <h6>Верстаем</h6>
-      <p class="text-800">Превращаем макет в полноценную адаптивную верстку используя последние технологии</p>
+      <p>Превращаем макет в полноценную адаптивную верстку используя последние технологии</p>
     </article>
     <article class="panel scrollAnim fade-bottom">
       <div class="panel__icon">
-        <img class="panel__svg" src="img/Brush.svg" loading="lazy">
+        <img src="img/Brush.svg" loading="lazy" alt="">
       </div>
       <h6>Дизайним</h6>
-      <p class="text-800">Создаем максимально удобный и понятный для конечный пользователей дизайн сайта исходя из ваших желаний</p>
+      <p>Создаем максимально удобный и понятный для конечный пользователей дизайн сайта исходя из ваших желаний</p>
     </article>
     <article class="panel scrollAnim fade-bottom">
       <div class="panel__icon">
-        <img class="panel__svg" src="img/Phone.svg" loading="lazy">
+        <img src="img/Phone.svg" loading="lazy" alt="">
       </div>
       <h6>Адаптируем</h6>
-      <p class="text-800">Наша верстка по умолчанию адаптируется под все устройства, но даже если верстали не мы, мы адаптируем</p>
+      <p>Наша верстка по умолчанию адаптируется под все устройства, но даже если верстали не мы, мы адаптируем</p>
     </article>
     <article class="panel scrollAnim fade-bottom">
         <div class="panel__icon">
-          <img src="img/Speedometer.svg" loading="lazy">
+          <img src="img/Speedometer.svg" loading="lazy" alt="">
         </div>
         <h6>Оптимизируем</h6>
-        <p class="text-800">Все сделанные нами сайты оптимизируются для максимально быстрой загрузки и работы сайта</p>
+        <p>Все сделанные нами сайты оптимизируются для максимально быстрой загрузки и работы сайта</p>
       </article>
   </div>
 </section>
 
-<section id="skills" class="articles">
+<section id="skills">
   <h5 class="scrollAnim long-fade-bottom">Наши навыки и с чем мы работаем:</h5>
 
   <div class="articles">
@@ -111,108 +88,84 @@
         <img src="img/HTML5.svg" loading="lazy" alt="HTML 5">
         <p>HTML 5</p>
       </div>
-      <div class="back">
-        <p>Язык гипертекстовой разметки позволят создавать каркас сайта</p>
-      </div>
+      <div class="back">Язык гипертекстовой разметки позволят создавать каркас сайта</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/CSS3.svg" loading="lazy" alt="CSS 3">
         <p>CSS 3</p>
       </div>
-      <div class="back">
-        <p>Язык описания внешнего вида, позволяет украшать HTML разметку</p>
-      </div>
+      <div class="back">Язык описания внешнего вида, позволяет украшать HTML разметку</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/JS.svg" loading="lazy" alt="JS">
         <p>JavaScript</p>
       </div>
-      <div class="back">
-        <p>Многонаправленый язык, в основном используеться для создания скриптов придающих динамичность странице</p>
-      </div>
+      <div class="back">Многонаправленый язык, в основном используеться для создания скриптов придающих динамичность странице</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/jQuery.svg" loading="lazy" alt="jQuery">
         <p>jQuery</p>
       </div>
-      <div class="back">
-        <p>JavaScript библиотека упрощающая реализацию некоторых скриптов</p>
-      </div>
+      <div class="back">JavaScript библиотека упрощающая реализацию некоторых скриптов</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/Sass.svg" loading="lazy" alt="Sass">
         <p>Sass</p>
       </div>
-      <div class="back">
-        <p>Язык в последствии превращающийся в CSS, создан для упрощения написания CSS кода</p>
-      </div>
+      <div class="back">Язык в последствии превращающийся в CSS, создан для упрощения написания CSS кода</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/Photoshop.svg" loading="lazy" alt="Photoshop">
         <p>Photoshop</p>
       </div>
-      <div class="back">
-        <p>Графический редактор, в нашем случае используется для создания макетов и редактирования изображений</p>
-      </div>
+      <div class="back">Графический редактор, в нашем случае используется для создания макетов и редактирования изображений</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/Illustrator.svg" loading="lazy" alt="Illustrator">
         <p>Illustrator</p>
       </div>
-      <div class="back">
-        <p>Редактор векторной графики, в основном мы его используем для создания иконок</p>
-      </div>
+      <div class="back">Редактор векторной графики, в основном мы его используем для создания иконок</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/InDesign.svg" loading="lazy" alt="InDesign">
         <p>InDesign</p>
       </div>
-      <div class="back">
-        <p>Программа в основном используемая для создания макетов</p>
-      </div>
+      <div class="back">Программа в основном используемая для создания макетов</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/Figma.svg" loading="lazy" alt="Figma">
         <p>Figma</p>
       </div>
-      <div class="back">
-        <p>Графический редактор используемый нами для создания макетов</p>
-      </div>
+      <div class="back">Графический редактор используемый нами для создания макетов</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/WebStrom.svg" loading="lazy" alt="WebStrom">
         <p>WebStrom</p>
       </div>
-      <div class="back">
-        <p>Среда разработки используемая нашей командой для написания HTML, CSS и JavaScript кода</p>
-      </div>
+      <div class="back">Среда разработки используемая нашей командой для написания HTML, CSS и JavaScript кода</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/VSCode.svg" loading="lazy" alt="VS Code">
         <p>VS Code</p>
       </div>
-      <div class="back">
-        <p>Среда разработки используемая нашей командой для написания HTML, CSS и JavaScript кода</p>
-      </div>
+      <div class="back">Среда разработки используемая нашей командой для написания HTML, CSS и JavaScript кода</div>
     </div>
     <div class="flip-card scrollAnim scale-transition">
       <div class="front">
         <img src="img/Git.svg" loading="lazy" alt="Git">
         <p>Git</p>
       </div>
-      <div class="back">
-        <p>Система управления версиями, в нашем случае используется для работы с GitHub</p>
-      </div>
+      <div class="back">Система управления версиями, в нашем случае используется для работы с GitHub</div>
     </div>
   </div>
 </section>
@@ -221,18 +174,42 @@
   <h5 class="scrollAnim long-fade-bottom">Наши работы:</h5>
 
   <div class="articles">
-    <div class="work scrollAnim fade-bottom">
-      <div class="img-wrapper"><img src="img/MiktorgPreview.webp" alt="Miktorg" loading="lazy"></div>
+    <article class="work scrollAnim fade-bottom">
+      <img src="img/VisonPreview.webp" alt="" loading="lazy">
+
       <div class="preview">
         <div class="preview__widgets">
-          <a class="popup" tool-tip="сайт оптимизирован" tool-tip2="(нажмите чтобы для проверки)" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fg2o2dev.github.io%2FwRedLine" target="_ blank">
-            <img src="img/SmallSpeedometer.svg" loading="lazy"/>
+          <a class="popup" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fg2o2dev.github.io%2FVison" target="_ blank">
+            <img src="img/SmallSpeedometer.svg" alt="" loading="lazy"/>
           </a>
-          <a class="popup" tool-tip="макет сделан нами" tool-tip2="(нажмите чтобы открыть макет)" href="https://www.figma.com/file/Nl2vZ4uTAFyM9enL4NsqYu/Untitled" target="_ blank">
-            <img src="img/SmallBrush.svg" loading="lazy"/>
+          <a class="popup" href="https://www.figma.com/file/l3672h0NM6pGkfoYMIodKy/Untitled" target="_ blank">
+            <img src="img/SmallBrush.svg" alt="" loading="lazy"/>
           </a>
-          <a class="popup" tool-tip="вёрстка сделана нами" tool-tip2="(нажмите чтобы посмотреть код)" href="https://github.com/G2O2dev/wRedLine" target="_ blank">
-            <img src="img/Terminal.svg" loading="lazy"/>
+          <a class="popup" href="https://github.com/G2O2dev/Vison" target="_ blank">
+            <img src="img/Terminal.svg" alt="" loading="lazy"/>
+          </a>
+        </div>
+
+        <div class="preview__info">
+          <p>Vison</p>
+          <button onclick="openModal('modal-vison')">Подробнее</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="work scrollAnim fade-bottom">
+      <img src="img/MiktorgPreview.webp" alt="" loading="lazy">
+
+      <div class="preview">
+        <div class="preview__widgets">
+          <a class="popup" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fg2o2dev.github.io%2FwRedLine" target="_ blank">
+            <img src="img/SmallSpeedometer.svg" alt="" loading="lazy"/>
+          </a>
+          <a class="popup" href="https://www.figma.com/file/Nl2vZ4uTAFyM9enL4NsqYu/Untitled" target="_ blank">
+            <img src="img/SmallBrush.svg" alt="" loading="lazy"/>
+          </a>
+          <a class="popup" href="https://github.com/G2O2dev/wRedLine" target="_ blank">
+            <img src="img/Terminal.svg" alt="" loading="lazy"/>
           </a>
         </div>
         <div class="preview__info">
@@ -240,19 +217,21 @@
           <button onclick="openModal('modal-miktorg')">Подробнее</button>
         </div>
       </div>
-    </div>
-    <div class="work scrollAnim fade-bottom">
-      <div class="img-wrapper"><img src="img/RedLinePreview.webp" alt="RedLine" loading="lazy"></div>
+    </article>
+
+    <article class="work scrollAnim fade-bottom">
+      <img src="img/RedLinePreview.webp" alt="RedLine" loading="lazy">
+
       <div class="preview">
         <div class="preview__widgets" >
-          <a class="popup" tool-tip="сайт оптимизирован" tool-tip2="(нажмите чтобы для проверки)" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fg2o2dev.github.io%2FwRedLine" target="_ blank">
-            <img src="img/SmallSpeedometer.svg" loading="lazy"/>
+          <a class="popup" href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fg2o2dev.github.io%2FwRedLine" target="_ blank">
+            <img src="img/SmallSpeedometer.svg" alt="" loading="lazy"/>
           </a>
-          <a class="popup" tool-tip="макет сделан нами" tool-tip2="(нажмите чтобы открыть макет)" href="https://www.figma.com/file/Nl2vZ4uTAFyM9enL4NsqYu/Untitled" target="_ blank">
-            <img src="img/SmallBrush.svg" loading="lazy"/>
+          <a class="popup" href="https://www.figma.com/file/Nl2vZ4uTAFyM9enL4NsqYu/Untitled" target="_ blank">
+            <img src="img/SmallBrush.svg" alt="" loading="lazy"/>
           </a>
-          <a class="popup" tool-tip="вёрстка сделана нами" tool-tip2="(нажмите чтобы посмотреть код)" href="https://github.com/G2O2dev/wRedLine" target="_ blank">
-            <img src="img/Terminal.svg" loading="lazy"/>
+          <a class="popup" href="https://github.com/G2O2dev/wRedLine" target="_ blank">
+            <img src="img/Terminal.svg" alt="" loading="lazy"/>
           </a>
         </div>
         <div class="preview__info">
@@ -260,12 +239,52 @@
           <button onclick="openModal('modal-redline')">Подробнее</button>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
 <div class="modal-bg"></div>
 <div class="modals" onclick="hideModal()">
+  <div class="modal-vison modal-work">
+    <div class="modal-wrapper">
+      <div class="modal-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <img loading="lazy" class="swiper-slide" src="img/VisonPreview.webp">
+            <img loading="lazy" class="swiper-slide" src="img/VisonPreview2.webp">
+            <img loading="lazy" class="swiper-slide" src="img/VisonPreview3.webp">
+            <img loading="lazy" class="swiper-slide" src="img/VisonPreview4.webp">
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div class="modal-buttons">
+        <div class="modal-button__github">Открыть код на GitHub</div>
+        <div class="modal-button__figma">Открыть макет в Figma</div>
+        <div class="modal-button__speed">Проверить скорость</div>
+        <div class="modal-button__open">Открыть полный сайт</div>
+      </div>
+
+      <div class="modal-info">
+        <h5>Vison</h5>
+        <p class="modal-info__desc">Лёгкий проект описывающий продукт и рассказывающий о его преимуществах</p>
+        <p class="modal-info__stack"><b>Какие технологии использовались:</b><br>HTML, SCSS, JS, Figma, Illustrator</p>
+        <div class="modal-info__stack">
+          <p><b>Что было реализовано:</b></p>
+          <ul>
+            <li>Макет</li>
+            <li>Адаптивность</li>
+            <li>Плавная прогрутка</li>
+            <li>Слайдер c картинками</li>
+            <li>Миниальные анимации</li>
+            <li>Моментальный перевод</li>
+            <li>Оптимизация скорости загрузки</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-redline modal-work">
     <div class="modal-wrapper">
@@ -286,7 +305,7 @@
       </div>
 
       <div class="modal-info">
-        <h5 class="modal-info__name">RedLine</h5>
+        <h5>RedLine</h5>
         <p class="modal-info__desc">Лёгкий проект описывающий продукт и рассказывающий о его преимуществах</p>
         <p class="modal-info__stack"><b>Какие технологии использовались:</b><br>HTML, SCSS, JS, Figma, Illustrator</p>
         <div class="modal-info__stack">
@@ -326,7 +345,7 @@
       </div>
 
       <div class="modal-info">
-        <h5 class="modal-info__name">Miktorg</h5>
+        <h5>Miktorg</h5>
         <p class="modal-info__desc">Средний одностраничник для привлчения покупателей окон</p>
         <p class="modal-info__stack"><b>Какие технологии использовались:</b><br>HTML, SCSS, JS, Figma, Illustrator</p>
         <div class="modal-info__stack">
@@ -342,7 +361,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <footer id="footer">
@@ -354,10 +372,10 @@
   <div class="forms-wrapper">
     <div class="form-wrapper scrollAnim fade-bottom">
       <p class="form-header">Заполните форму:</p>
-      <form action="#" method="get" enctype="multipart/form-data" class="form">
-        <input type="text" class="feedback" placeholder="Куда нам ответить">
+      <form class="form" action="#" method="get" enctype="multipart/form-data">
+        <input class="feedback" type="text" placeholder="Куда нам ответить">
         <div class="message" onclick="redirectFocus()">
-          <p id="msg-txt" contenteditable="true" oninput="updatePlaceholder()" data-text="Сообщение/вопрос:" class=""></p>
+          <p id="msg-txt" contenteditable="true" oninput="updatePlaceholder()" class=""></p>
         </div>
         <button type="submit" class="form-btn send">Отправить</button>
       </form>
@@ -382,6 +400,5 @@
 </footer>
 <script src="js/script.js"></script>
 <script src="js/swiper.js" defer></script>
-<script src="js/slider.js" defer></script>
 </body>
 </html>
