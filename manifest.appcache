@@ -2,8 +2,12 @@ CACHE MANIFEST
 
 CACHE:
 css/style.css 
+css/lazy.css
 js/script.js
 js/swiper.js
+font/Apex.woff2
+font/SF.woff2
+font/SF-Regular.woff2
 img/MiktorgPreview2.webp
 img/MiktorgPreview3.webp
 img/VisonPreview4.webp
@@ -12,13 +16,7 @@ img/MiktorgPreview.webp
 img/VisonPreview3.webp
 img/VisonPreview2.webp
 img/VisonPreview.webp
-font/SF.woff2
-font/SF-Regular.woff2
-css/style.css
-css/lazy.css
 img/jQuery.svg
-js/script.js
-font/Apex.woff2
 img/Speedometer.svg
 img/Brush.svg
 img/JS.svg
