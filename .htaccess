@@ -1,6 +1,7 @@
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 AddType image/svg+xml .svg
+AddType application/x-font-woff2 .woff2
 
 ExpiresActive On
 #Img
