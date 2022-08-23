@@ -1,18 +1,23 @@
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
+AddType image/svg+xml .svg
+
 ExpiresActive On
-#кэшировать изображения один месяц
+#Img
   ExpiresByType image/x-icon "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
   #кэшировать файлы-иконки один год
   ExpiresByType image/ico "access plus 365 days"
-  #кэшировать css, javascript файлы одну неделю
+  #html, css, js
   ExpiresByType text/html "access 1 month"
   ExpiresByType text/css "access plus 7 days"
   ExpiresByType text/javascript "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType application/x-javascript "access plus 7 days"
+  #Fonts
+  ExpiresByType application/font-woff2  "access plus 1 month"
 </IfModule>
 ## EXPIRES CACHING ##
