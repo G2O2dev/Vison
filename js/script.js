@@ -22,14 +22,7 @@ async function updateScrollManager() {
 window.addEventListener("scroll", updateScrollManager);
 updateScroll();
 
-window.onscroll = function() {myFunction()};
 
-function myFunction() {
-    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("scroll-bar").style.height = scrolled + "%";
-}
 
 function updatePlaceholder(){
     var msg = document.getElementById("msg-txt");
@@ -107,6 +100,17 @@ function hideModal(){
         animation = 0;
         },3000);
 }
+document.addEventListener('backbutton', () =>{
+    var modal;
+    var allModal = document.getElementsByClassName('modal-work');
+    for (let i =0; i < allModal.length; i++){
+        if (allModal[i].classList.contains('modal-work--show'))
+            modal = allModal[i];
+    }
+    if(modal != null){
+        hideModal();
+    }
+});
 
 function loadScript(src){
     var s = document.createElement('script');
@@ -121,8 +125,67 @@ function loadStyle(src){
     document.getElementsByTagName('head')[0].appendChild(cssFa);
 }
 
-if(!navigator.userAgent.toLowerCase().indexOf('firefox') > -1 && window.getComputedStyle(document.querySelector('.work')).overflow != "visible"){
-    loadScript("js/SmoothScroll.js");
+if(window.getComputedStyle(document.querySelector('.work')).overflow != "visible"){
+    window.onscroll = function() {updateBar()};
+
+    function updateBar() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("scroll-bar").style.height = scrolled + "%";
+    }
+
+
+    if(!navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+        loadScript("js/SmoothScroll.js");
+    }
 }
+
+function scrollIt(destination, duration = 1600, callback) {
+    const start = window.pageYOffset;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+    const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+    const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+    const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+    if ('requestAnimationFrame' in window === false) {
+        window.scroll(0, destinationOffsetToScroll);
+        if (callback) {
+            callback();
+        }
+        return;
+    }
+
+    function scroll() {
+        const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+        const t = Math.min(1, ((now - startTime) / duration));
+        const timeFunction = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+
+        if (window.pageYOffset === destinationOffsetToScroll) {
+            if (callback) {
+                callback();
+            }
+            return;
+        }
+
+        requestAnimationFrame(scroll);
+    }
+
+    scroll();
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(el){
+    el.addEventListener("click", function() {
+        scrollIt(document.querySelector(this.getAttribute('href')));
+    });
+});
+
+document.querySelectorAll('div[href]').forEach(function (el){
+    el.addEventListener('click', function (){
+        window.open(el.getAttribute('href'), '_blank');
+    });
+});
 
 
