@@ -947,7 +947,7 @@ footer {
   }
 }
 @media (max-width: 700px) {
-  #logo {
+  .logo {
     display: none !important;
   }
   nav {
