@@ -442,10 +442,11 @@ section > h5 {
   display: flex;
   gap: 10px;
 
+  right: 10px;
   top: 10px;
 
-  right: -50px; opacity: 0;
-  transition: opacity 1s, right 1s;
+  transform: translateX(100%); opacity: 0;
+  transition: opacity 1s, transform 1s;
 
   a {
     position: relative;
@@ -471,8 +472,7 @@ section > h5 {
   }
 }
 .work:hover .preview__widgets {
-  opacity: 1;
-  right: 10px;
+  transform: translateX(0); opacity: 1;
 }
 
 .popup::after {
