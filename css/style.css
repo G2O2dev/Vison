@@ -912,7 +912,7 @@ footer {
   }
   .work .preview__widgets {
     opacity: 1;
-    right: 0;
+    transform: translateX(0);
   }
   .work .preview__info {
     transform: translateY(0);
