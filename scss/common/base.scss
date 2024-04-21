@@ -1,0 +1,38 @@
+::selection {
+  background: rgba(105, 200, 154, .15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'SF', serif;
+  font-weight: 300;
+}
+
+html {
+  background: #1E1E1E;
+  scrollbar-width: none;
+  color: #fff;
+}
+
+img {
+  user-select: none;
+}
+
+.articles {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  max-width: 1600px;
+  margin: 50px auto 0 auto;
+}
+
+section > h5 {
+  font-size: 48px;
+  padding-top: 50px;
+
+  width: 100%;
+  text-align: center;
+}

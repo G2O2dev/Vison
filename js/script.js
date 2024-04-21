@@ -121,7 +121,7 @@ function loadStyle(src){
     var cssFa = document.createElement('link');
     cssFa.href = src;
     cssFa.rel = 'stylesheet';
-    cssFa.type = 'text/css';
+    cssFa.type = 'text/styles';
     document.getElementsByTagName('head')[0].appendChild(cssFa);
 }
 

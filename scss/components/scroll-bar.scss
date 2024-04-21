@@ -1,0 +1,11 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#scroll-bar {
+  position: fixed;
+  z-index: 9;
+  right: 0;
+  width: 2px;
+  background-color: #464646;
+}
