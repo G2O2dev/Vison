@@ -1,0 +1,25 @@
+.ocean {
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.wave {
+  animation: wave 10s linear infinite;
+}
+
+.wave-slow {
+  opacity: .6;
+  animation: wave 18s linear reverse infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}

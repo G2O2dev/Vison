@@ -1,0 +1,55 @@
+#we-do {
+  background: #232323;
+  padding-bottom: 50px;
+}
+
+.panel {
+  position: relative;
+  width: 350px;
+  height: 315px;
+  margin-top: 45px;
+
+  background: #141414;
+  border-radius: 15px;
+
+  transition: box-shadow .4s;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  &:hover .panel__icon {
+    transform: translateY(-15px);
+  }
+
+  h6 {
+    font-size: 32px;
+    text-align: center;
+
+    width: 100%;
+    margin-top: 115px;
+  }
+
+  p {
+    padding: 5px;
+
+    font-size: 23px;
+    text-align: center;
+    color: #C8C8C8;
+  }
+}
+
+.panel__icon {
+  position: absolute;
+  margin: -45px auto auto auto;
+  left: 0; right: 0;
+  width: 200px;
+  height: 140px;
+
+  background: #191919;
+  border-radius: 20px;
+
+  display: grid;
+  place-items: center;
+
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: transform .6s;
+}

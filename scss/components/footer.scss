@@ -1,0 +1,186 @@
+footer {
+  position: relative;
+  min-height: 500px;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 9;
+  top: -36px; left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+
+  border-radius: 15px;
+
+  font-size: 48px;
+  line-height: 76px;
+  padding: 0 25px 0 25px;
+}
+
+.bg-wrapper {
+  overflow: hidden;
+  position: absolute;
+
+  width: 100vw;
+  height: 100%;
+
+  img {
+    width: 100vw;
+    height: 100%;
+    filter: drop-shadow(0px 0px 15px #498C6C) blur(1px) brightness(55%);
+    object-fit: cover;
+  }
+}
+
+.bg-wrapper, .forms-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+}
+
+.forms-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 340px;
+}
+
+.form-header {
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  padding-bottom: 10px;
+
+  color: #B4B4B4;
+}
+
+.forms-or {
+  font-weight: 400;
+  font-size: 24px;
+  padding: 43px 25px 0 25px;
+  color: #B4B4B4;
+}
+
+.form {
+  background: #333;
+  border-radius: 15px;
+}
+
+.form-btn {
+  display: block;
+  text-decoration: none;
+
+  font-size: 24px;
+  color: #C8C8C8;
+  line-height: 58px;
+
+  background-color: #333;
+  transition: background-color .6s;
+  &:hover {
+    background-color: #444;
+  }
+
+  img {
+    vertical-align: middle;
+    padding: 0 10px 2px 10px;
+  }
+}
+
+.telegram {
+  border-radius: 15px 15px 0 0;
+  border: 2px solid #222;
+}
+
+.discord, .vk {
+  border-right: 2px solid #222;
+  border-bottom: 2px solid #222;
+  border-left: 2px solid #222;
+}
+
+.instagram {
+  border-right: 2px solid #222;
+  border-left: 2px solid #222;
+}
+
+.mail {
+  border: 2px solid #222;
+  border-radius: 0 0 15px 15px;
+}
+
+.send {
+  cursor: pointer;
+  width: 100%;
+  border: 2px solid #222;
+  border-radius: 0 0 15px 15px;
+}
+
+.message {
+  position: relative;
+  cursor: text;
+
+  width: 336px;
+  height: 180px;
+
+  color: #8C8C8C;
+  border-right: 2px solid #222;
+  border-left: 2px solid #222;
+  overflow-y: scroll;
+
+  p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 180px;
+    word-wrap: anywhere;
+
+    font-size: 24px;
+    text-align: center;
+    color: #C8C8C8;
+
+    border: none;
+    outline: 0;
+  }
+  p::after {
+    content: 'Сообщение/вопрос:';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    color: #8C8C8C;
+    font-size: 24px;
+  }
+}
+
+.feedback {
+  font-size: 24px;
+
+  line-height: 56px;
+
+  width: calc(100% - 4px);
+
+  color: #C8C8C8;
+  background-color: #333;
+  text-align: center;
+  border: 2px solid #222;
+  border-radius: 15px 15px 0 0;
+  outline: 0;
+}
+
+.feedback::placeholder {
+  color: #8C8C8C;
+}
+
+.g2-logo {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
