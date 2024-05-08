@@ -233,7 +233,7 @@
 
                     <div class="preview__info">
                         <p>Vison</p>
-                        <button onclick="openDialog(window.visonmd)" dialog-id="visonModal">Подробнее</button>
+                        <button onclick="openDialog(window.visonmd)">Подробнее</button>
                     </div>
                 </div>
             </article>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="preview__info">
                         <p>Miktorg</p>
-                        <button onclick="openModal('modal-miktorg')">Подробнее</button>
+                        <button onclick="openDialog(window.miktorgmd)">Подробнее</button>
                     </div>
                 </div>
             </article>
@@ -364,6 +364,45 @@
                     <li>Плавная прокрутка</li>
                     <li>Множество анимаций</li>
                     <li>Плавная прокрутка к секциям</li>
+                    <li>Оптимизация скорости загрузки</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog class="work-dialog" id="miktorgmd" itemscope itemtype="https://schema.org/WebPage">
+    <div class="work-dialog__wrapper">
+        <div class="work-dialog__swiper swiper" itemscope>
+            <div class="swiper-wrapper">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview.webp" itemprop="primaryImageOfPage">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview2.webp" itemprop="image">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview3.webp" itemprop="image">
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="work-dialog__btns-grid btns-grid" itemscope>
+            <a href="https://github.com/G2O2dev/MiktorgService" class="ico-btn ico-btn_github">Открыть код на GitHub</a>
+            <a href="https://www.figma.com/file/4ZuhhGkkqsl5xc8Waqljgi/MiktorgService.com" class="ico-btn ico-btn_figma">Открыть
+                макет в Figma</a>
+            <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fgithub.com%2FG2O2dev%2FMiktorgService"
+               class="ico-btn ico-btn_lighthouse">Проверить скорость</a>
+            <a href="https://g2o2dev.github.io/MiktorgService" class="ico-btn ico-btn_open">Открыть полный сайт</a>
+        </div>
+
+        <div class="work-dialog__info" itemscope>
+            <p class="info__header">Miktorg</p>
+            <p class="info__description">Лендинг описывающий продукт и привлекающий новых клиентов</p>
+            <p class="info__list"><b>Какие технологии использовались:</b><br>HTML, SCSS, JS, Figma, Illustrator</p>
+            <div class="info__list">
+                <p><b>Что было реализовано:</b></p>
+                <ul>
+                    <li>Макет</li>
+                    <li>Вёрстка</li>
+                    <li>Адаптивность</li>
+                    <li>Плавная прокрутка</li>
+                    <li>Минимальные анимации</li>
                     <li>Оптимизация скорости загрузки</li>
                 </ul>
             </div>
