@@ -1,4 +1,5 @@
 var reveals = document.querySelectorAll(".scrollAnim");
+
 async function updateScroll() {
 
     for (var i = 0; i < reveals.length; i++) {
@@ -10,9 +11,11 @@ async function updateScroll() {
         }
     }
 }
+
 var isUpdateScrollWork = 0;
+
 async function updateScrollManager() {
-    if(isUpdateScrollWork == 0){
+    if (isUpdateScrollWork == 0) {
         isUpdateScrollWork = 1;
         await updateScroll();
         isUpdateScrollWork = 0;
@@ -23,110 +26,62 @@ window.addEventListener("scroll", updateScrollManager);
 updateScroll();
 
 
-
-function updatePlaceholder(){
+function updatePlaceholder() {
     var msg = document.getElementById("msg-txt");
-    if(msg.textContent == ""){
+    if (msg.textContent == "") {
         msg.classList.remove("hide-after");
-    }
-    else{
+    } else {
         msg.classList.add("hide-after");
     }
 }
-function redirectFocus(){
+
+function redirectFocus() {
     document.getElementById("msg-txt").focus();
 }
 
-function getEl(Id){
-    return document.getElementsByClassName(Id)[0];
-}
-
-var modalBg = getEl("modal-bg");
-var modals = getEl("modals");
-var animation = 0;
-
-function openModal(modalName){
-    if(animation) return;
-    animation = 1;
-
-    var modal = getEl(modalName);
+function openDialog(dialog) {
+    dialog.style.willChange = "opacity, transform";
+    dialog.showModal();
     document.body.style.overflow = 'hidden';
 
-    modalBg.classList.add("modal-bg-open");
-    modals.classList.add("dp-grid");
-    modal.classList.add("modal-work--show");
-    modal.classList.add("dp-block");
-
-    setTimeout(function (){
-        modal.classList.add('visible');
-        animation = 0;
-    }, 1500)
+    function outsideClickListener(event) {
+        if (event.target === dialog) {
+            closeDialog(dialog);
+        }
+    }
+    setTimeout(() => {
+        document.addEventListener("click", outsideClickListener);
+        document.addEventListener("close", () => document.removeEventListener("click", outsideClickListener), { once: true });
+    }, 100)
 }
-function hideModal(){
-    if(event.target !== event.currentTarget) return;
-    if(animation) return;
-    animation = 1;
 
-    var modal;
-    var allModal = document.getElementsByClassName('modal-work');
-    for (let i =0; i < allModal.length; i++){
-        if (allModal[i].classList.contains('modal-work--show'))
-            modal = allModal[i];
-    }
-
-    modal.classList.remove("modal-work--show");
-    modal.style.animation = 'none';
-    modal.offsetHeight;
-    modal.classList.add("modal-work--hide");
-
-    modal.classList.add('hide-modal');
-    modal.classList.remove('show-modal');
-
-    setTimeout(function (){
-        modal.classList.remove('visible');
-        modalBg.classList.add("modal-bg-hide");
-    }, 1500)
-
-    setTimeout(function () {
-        modalBg.classList.remove("modal-bg-open");
-        modalBg.classList.remove("modal-bg-hide");
-
-        modals.classList.remove("dp-grid");
-
-        modal.classList.remove("hide-modal");
-        modal.classList.remove("modal-work--hide");
-        modal.classList.remove("dp-block");
-        document.body.style.overflow = 'visible';
-        animation = 0;
-        },3000);
+function closeDialog(dialog) {
+    dialog.classList.add("work-dialog_closing");
+    document.body.style.removeProperty("overflow");
+    setTimeout(() => {
+        dialog.classList.remove("work-dialog_closing");
+        dialog.close();
+        dialog.style.removeProperty("will-change");
+    }, 400);
 }
-document.addEventListener('backbutton', () =>{
-    var modal;
-    var allModal = document.getElementsByClassName('modal-work');
-    for (let i =0; i < allModal.length; i++){
-        if (allModal[i].classList.contains('modal-work--show'))
-            modal = allModal[i];
-    }
-    if(modal != null){
-        hideModal();
-    }
-});
 
-function loadScript(src){
+function loadScript(src) {
     var s = document.createElement('script');
     s.src = src;
     document.head.appendChild(s);
 }
-function loadStyle(src){
-    var cssFa = document.createElement('link');
-    cssFa.href = src;
-    cssFa.rel = 'stylesheet';
-    cssFa.type = 'text/styles';
-    document.getElementsByTagName('head')[0].appendChild(cssFa);
+
+function loadStyle(src) {
+    var link = document.createElement('link');
+    link.href = src;
+    link.rel = 'stylesheet';
+    document.getElementsByTagName('head')[0].appendChild(link);
 }
 
-if(window.getComputedStyle(document.querySelector('.work')).overflow != "visible"){
-    window.onscroll = function() {updateBar()};
+if (window.getComputedStyle(document.querySelector('.work')).overflow != "visible") {
+    window.onscroll = function () {
+        updateBar()
+    };
 
     function updateBar() {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -136,7 +91,7 @@ if(window.getComputedStyle(document.querySelector('.work')).overflow != "visible
     }
 
 
-    if(!navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+    if (!navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
         loadScript("js/SmoothScroll.js");
     }
 }
@@ -176,16 +131,31 @@ function scrollIt(destination, duration = 1600, callback) {
 
     scroll();
 }
-document.querySelectorAll('a[href^="#"]').forEach(function(el){
-    el.addEventListener("click", function() {
+
+document.querySelectorAll('a[href^="#"]').forEach(function (el) {
+    el.addEventListener("click", function () {
         scrollIt(document.querySelector(this.getAttribute('href')));
     });
 });
 
-document.querySelectorAll('div[href]').forEach(function (el){
-    el.addEventListener('click', function (){
+document.querySelectorAll('div[href]').forEach(function (el) {
+    el.addEventListener('click', function () {
         window.open(el.getAttribute('href'), '_blank');
     });
 });
 
 
+if (window.HTMLDialogElement === undefined) {
+    const dialogs = document.querySelectorAll("dialog")
+
+    dialogs.forEach(async (dialog) => {
+        const {default: polyfill} = await import("https://esm.run/dialog-polyfill")
+        polyfill.registerDialog(dialog)
+    })
+}
+
+// Lazy css loading
+window.addEventListener('load', () => {
+    loadStyle("styles/lazy.css");
+    loadStyle("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+});
