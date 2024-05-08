@@ -8,7 +8,7 @@
   font-display: swap;
   font-family: "SF";
   font-weight: 300;
-  src: url("../font/SF.woff2") format("woff2");
+  src: url("../font/SF-Light.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
@@ -43,6 +43,10 @@ img {
   user-select: none;
 }
 
+a, u {
+  text-decoration: none;
+}
+
 .articles {
   display: flex;
   gap: 50px;
@@ -63,6 +67,42 @@ section > h5 {
   display: none;
 }
 
+@keyframes opacity-1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity-0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes dialog-window-open {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) translateY(30%) rotateX(-25deg) scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0) translateY(0) scale(1);
+  }
+}
+@keyframes dialog-window-close {
+  0% {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0) translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(600px) translateY(30%) rotateX(-25deg) scale(0.6);
+  }
+}
 :root {
   --font: #F5F5F5;
   --font2: #8C8C8C;
@@ -300,193 +340,148 @@ footer {
   left: 5px;
 }
 
-.modal-bg {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  right: 0;
-  z-index: 88;
+.work-dialog {
+  margin: auto;
+  background: transparent;
+  border: none;
+}
+
+.work-dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
-  opacity: 0;
-  transition: opacity 3s;
 }
 
-.modal-bg-open {
-  display: block;
-  animation: opacity-1 1.5s forwards;
+.work-dialog[open] {
+  animation: dialog-window-open ease-in-out 0.4s both;
 }
 
-@keyframes opacity-1 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.modal-bg-hide {
-  animation: opacity-0 1.5s forwards;
+.work-dialog[open]::backdrop {
+  animation: opacity-1 ease-in-out 0.4s both;
 }
 
-@keyframes opacity-0 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes open-modal {
-  0% {
-    left: -100%;
-  }
-  50% {
-    left: 0;
-  }
-  100% {
-    left: 100%;
-  }
-}
-.modals {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 99;
-  display: none;
-  place-items: center;
+.work-dialog_closing {
+  animation: dialog-window-close 0.4s forwards !important;
 }
 
-.modal-work {
-  display: none;
-  position: relative;
-  width: 1000px;
-  height: auto;
-  max-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: #232323;
-  border-radius: 15px;
-  visibility: hidden;
+.work-dialog_closing::backdrop {
+  animation: opacity-0 0.4s forwards !important;
 }
 
-.modal-work::after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: -100%;
-  top: 0;
-  width: 100%;
-  height: 1000%;
-  background: #232323;
-  border-radius: 15px;
-  visibility: visible;
-}
-
-.modal-work.modal-work--show::after {
-  animation: open-modal 3s;
-}
-
-.modal-work.modal-work--hide::after {
-  animation: open-modal 3s reverse;
-}
-
-.modal-wrapper {
+.work-dialog__wrapper {
   display: grid;
+  position: relative;
   grid-template-columns: 550px 390px;
   grid-template-rows: 380px 104px;
   grid-template-areas: "s d" "b d";
   gap: 20px;
-  margin: 20px;
+  padding: 20px;
+  width: 1000px;
+  height: auto;
+  max-height: 100vh;
+  overflow-y: auto;
+  background: #232323;
+  border: none;
+  border-radius: 15px;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.dp-grid {
-  display: grid;
-}
-
-.dp-block {
-  display: block;
-}
-
-.modal-slider {
+.work-dialog__swiper {
   grid-area: s;
+  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
 }
+.work-dialog__swiper .swiper-pagination-bullet-active {
+  background: #69C89A !important;
+  box-shadow: 0 0 5px rgba(73, 140, 108, 0.5) !important;
+}
+.work-dialog__swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+  background: #5A5A5A;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
-.modal-info {
+.work-dialog__info {
   grid-area: d;
 }
-.modal-info h5 {
+
+.info__header {
+  color: #F5F5F5;
   font-weight: 500;
   font-size: 48px;
   text-align: center;
 }
 
-.modal-info__stack {
+.info__description {
+  font-size: 24px;
+  text-align: center;
+  color: #DCDCDC;
+}
+
+.info__list {
   font-size: 21px;
   line-height: 32px;
   color: #DCDCDC;
   text-align: left;
   margin-top: 20px;
 }
-.modal-info__stack b {
+.info__list b {
   font-weight: 400;
   font-size: 24px;
   color: #67BF97;
 }
-.modal-info__stack ul {
+.info__list ul {
   list-style-type: none;
   list-style-position: inside;
 }
-.modal-info__stack li:before {
+.info__list li:before {
   content: "•";
   padding-right: 7px;
 }
 
-.modal-info__desc {
-  font-size: 24px;
-  text-align: center;
-  color: #DCDCDC;
+.work-dialog__btns-grid {
+  grid-area: b;
 }
 
-.modal-buttons {
+.btns-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  grid-area: b;
 }
-.modal-buttons > div {
+.btns-grid > div {
+  flex-grow: 1;
+}
+
+.ico-btn {
   position: relative;
   cursor: pointer;
   flex-grow: 1;
   font-size: 19px;
   line-height: 46px;
   text-indent: 46px;
+  color: #F5F5F5;
   border-radius: 10px;
   background: #141414;
-  transition: background-color 0.6s;
+  transition: background-color 0.4s;
 }
-.modal-buttons > div:hover {
+.ico-btn:hover {
   background: #323232;
 }
-.modal-buttons > div::before {
+.ico-btn::before {
   content: "";
   position: absolute;
   width: 46px;
   height: 46px;
   left: 0;
+  filter: brightness(70%) grayscale(100%);
+  transition: filter 0.4s;
   background-position: center;
   background-repeat: no-repeat;
+}
+.ico-btn:hover::before {
+  filter: brightness(100%) grayscale(0);
 }
 
 .ocean {
