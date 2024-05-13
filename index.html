@@ -76,14 +76,14 @@
         <h5 class="scrollAnim long-fade-bottom">Чем мы занимаемся:</h5>
 
         <div class="articles">
-            <article class="panel scrollAnim fade-bottom">
+            <article class="panel scrollAnim fade-bottom" id="p-dev">
                 <div class="panel__icon">
                     <img src="img/Code.svg" loading="lazy" alt="">
                 </div>
                 <h6>Верстаем</h6>
                 <p>Превращаем макет в полноценную адаптивную вёрстку используя последние технологии</p>
             </article>
-            <article class="panel scrollAnim fade-bottom">
+            <article class="panel scrollAnim fade-bottom" id="p-design">
                 <div class="panel__icon">
                     <img src="img/Brush.svg" loading="lazy" alt="">
                 </div>
@@ -91,7 +91,7 @@
                 <p>Создаем максимально удобный и понятный для конечных пользователей дизайн сайта исходя из ваших
                     желаний</p>
             </article>
-            <article class="panel scrollAnim fade-bottom">
+            <article class="panel scrollAnim fade-bottom" id="p-adapt">
                 <div class="panel__icon">
                     <img src="img/Phone.svg" loading="lazy" alt="">
                 </div>
@@ -317,10 +317,8 @@
                     <a href="" class="form-btn telegram"><img src="img/Telegram.svg" loading="lazy" alt="">Telegram</a>
                     <a href="" class="form-btn vk"><img src="img/Vk.svg" loading="lazy" alt="">Вконтакте</a>
                     <a href="" class="form-btn discord"><img src="img/Discord.svg" loading="lazy" alt="">Discord</a>
-                    <a href="" class="form-btn instagram"><img src="img/Instagram.svg" loading="lazy"
-                                                               alt="">Instagram</a>
-                    <a href="" class="form-btn mail"><img src="img/Mail.svg" loading="lazy"
-                                                          alt="">visonproj@gmail.com</a>
+                    <a href="" class="form-btn instagram"><img src="img/Instagram.svg" loading="lazy" alt="">Instagram</a>
+                    <a href="" class="form-btn mail"><img src="img/Mail.svg" loading="lazy" alt="">visonproj@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -371,18 +369,18 @@
     </div>
 </dialog>
 
-<dialog class="work-dialog" id="miktorgmd" itemscope itemtype="https://schema.org/WebPage">
+<dialog class="work-dialog" id="miktorgmd">
     <div class="work-dialog__wrapper">
-        <div class="work-dialog__swiper swiper" itemscope>
+        <div class="work-dialog__swiper swiper">
             <div class="swiper-wrapper">
-                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview.webp" itemprop="primaryImageOfPage">
-                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview2.webp" itemprop="image">
-                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview3.webp" itemprop="image">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview.webp">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview2.webp">
+                <img loading="lazy" class="swiper-slide" alt="" src="img/MiktorgPreview3.webp">
             </div>
             <div class="swiper-pagination"></div>
         </div>
 
-        <div class="work-dialog__btns-grid btns-grid" itemscope>
+        <div class="work-dialog__btns-grid btns-grid">
             <a href="https://github.com/G2O2dev/MiktorgService" class="ico-btn ico-btn_github">Открыть код на GitHub</a>
             <a href="https://www.figma.com/file/4ZuhhGkkqsl5xc8Waqljgi/MiktorgService.com" class="ico-btn ico-btn_figma">Открыть
                 макет в Figma</a>
@@ -391,7 +389,7 @@
             <a href="https://g2o2dev.github.io/MiktorgService" class="ico-btn ico-btn_open">Открыть полный сайт</a>
         </div>
 
-        <div class="work-dialog__info" itemscope>
+        <div class="work-dialog__info">
             <p class="info__header">Miktorg</p>
             <p class="info__description">Лендинг описывающий продукт и привлекающий новых клиентов</p>
             <p class="info__list"><b>Какие технологии использовались:</b><br>HTML, SCSS, JS, Figma, Illustrator</p>
@@ -413,5 +411,68 @@
 <script src="js/script.js" async></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 <script src="js/swiper.js" defer></script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "Vison",
+        "description": "Профисиональный дизайн, вёрстка и СЕО оптимизация вашего лендинга",
+        "url": "https://g2o2dev.github.io/Vison/",
+        "keywords": [
+            "Vison",
+            "Вайзон",
+            "Вайсон"
+        ],
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 0,
+                    "item": {
+                        "@id": "https://g2o2dev.github.io/Vison/",
+                        "name": "Vison"
+                    }
+                }
+            ]
+        },
+        "@graph": [
+            {
+                "@type": "Product",
+                "@id": "https://g2o2dev.github.io/Vison#p-design",
+                "name": "Дизайн лендинга",
+                "description": "Создаём продающий дизайн с учётом потребностей вашей аудитории"
+            },
+            {
+                "@type": "Product",
+                "@id": "https://g2o2dev.github.io/Vison#p-dev",
+                "name": "Вёрстка лендинга",
+                "description": "Транслируем дизайн в компактный, легко поддерживаем код"
+            },
+            {
+                "@type": "Product",
+                "@id": "https://g2o2dev.github.io/Vison#p-adapt",
+                "name": "Адаптирование сайта",
+                "description": "Адаптируем ваш сайт под устройства и браузеры ваших клиентов"
+            },
+            {
+                "@type": "Product",
+                "@id": "https://g2o2dev.github.io/Vison#p-seo",
+                "name": "СЕО Оптимизация",
+                "description": "Оптимизируем ваш лендинг для максимальной конверсии и поисковой релевантности"
+            }
+        ],
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Сколько занимает разработка лендинга?",
+                "acceptedAnswer": {
+                    "text": "Обычно у нашей команды это занимает до 21 день. 7 дней на разработку дизайна. 12 дней на вёрстку. 2 дня на СЕО оптимизацию.",
+                    "@type": "Answer"
+                }
+            }
+        ]
+    }
+</script>
 </body>
 </html>
