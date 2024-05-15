@@ -405,6 +405,7 @@ footer {
 
 .work-dialog__info {
   grid-area: d;
+  overflow-y: scroll;
 }
 
 .info__header {
