@@ -1,2 +1,5 @@
 .idea/
 .git/
+todo/
+node_modules/
+description.txt
