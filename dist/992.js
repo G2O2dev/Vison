@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvison=self.webpackChunkvison||[]).push([[992],{992:function(e,i,n){n.r(i);var s=n(236),l=n(848);new s.A(".swiper",{loop:!0,modules:[l.dK],pagination:{el:".swiper-pagination",clickable:!0,type:"bullets"}})}}]);
