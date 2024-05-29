@@ -1,11 +1,13 @@
 const path = require("node:path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageminAvifWebpackPlugin= require("imagemin-avif-webpack-plugin");
 const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyPlugin = require("copy-webpack-plugin");
+
 
 
 const mode = process.env.NODE_ENV || "development";
@@ -32,7 +34,8 @@ module.exports = {
     plugins: [
         new htmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html'),
-            scriptLoading: 'blocking'
+            filename: "index.html",
+            inject: 'body',
         }),
         new PreloadWebpackPlugin({
             rel: 'preload',
@@ -44,18 +47,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
         }),
-        new ImageminAvifWebpackPlugin({
-            config: [{
-                test: /\.(jpe?g|png)/,
-                options: {
-                    quality:  85
-                }
-            }],
-            overrideExtension: true,
-            detailedLogs: false,
-            silent: false,
-            strict: true
+        new CopyPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src', 'img'), to: path.resolve(__dirname, 'dist', 'img') },
+            ],
         }),
+        // new BundleAnalyzerPlugin()
     ],
     optimization: {
         minimize: true,
@@ -76,10 +73,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.html$/i,
-                loader: "html-loader",
-            },
             {
                 test: /\.(c|sa|sc)ss$/i,
                 use: [

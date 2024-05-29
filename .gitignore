@@ -3,3 +3,5 @@
 todo/
 node_modules/
 description.txt
+dist/
+.gitignore
