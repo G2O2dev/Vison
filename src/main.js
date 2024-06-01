@@ -1,11 +1,12 @@
-import './scss/index.scss';
+// import './scss/index.scss';
 
 import './js/scroll_animation';
 import './js/anchor_animation';
 import './js/input_helper';
 import './js/dialog';
 
-window.onload = e => {
+
+window.onload = () => {
     import('./scss/lazy.scss');
     import('./js/swiper');
 }
