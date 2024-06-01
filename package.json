@@ -9,6 +9,7 @@
     "preview": "vite build & vite preview"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "sass": "^1.77.3",
     "sharp": "^0.33.4",
     "svgo": "^3.3.2",
