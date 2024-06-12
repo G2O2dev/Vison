@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite build & vite preview"
+    "preview": "vite build & vite preview",
+    "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@vheemstra/imagemin-avifenc": "^2.1.0",
     "@vheemstra/vite-plugin-imagemin": "^2.0.0",
-    "gh-pages": "^6.1.1",
     "imagemin-svgo": "^11.0.0",
     "sass": "^1.77.3",
     "vite": "^5.2.0",
