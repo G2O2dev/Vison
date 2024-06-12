@@ -2,6 +2,8 @@
   margin: auto;
   background: transparent;
   border: none;
+
+  border-radius: 15px;
 }
 
 .work-dialog::backdrop {
@@ -28,7 +30,7 @@
 .work-dialog__wrapper {
   display: grid;
   position: relative;
-  grid-template-columns: 550px 390px;
+  grid-template-columns: 550px 1fr;
   grid-template-rows: 380px 104px;
   grid-template-areas:
   "s d"
@@ -36,17 +38,25 @@
   gap: 20px;
 
   padding: 20px;
+  box-sizing: content-box;
 
 
-  width: 1000px;
-  height: auto;
-  max-height: 100vh;
-  overflow-y: auto;
+  max-width: 1050px;
 
   background: #232323;
   border: none;
-  border-radius: 15px;
+
+  @media (max-width: 999px), (max-height: 582px) {
+    display: flex;
+    flex-direction: column;
+
+    .work-dialog__btns-grid {
+      flex-direction: column;
+      order: 3;
+    }
+  }
 }
+
 
 .work-dialog__swiper {
   grid-area: s;
@@ -55,6 +65,10 @@
   border-radius: 15px;
   overflow: hidden;
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+
+  .swiper-wrapper img {
+    object-fit: cover;
+  }
 
   .swiper-pagination-bullet-active {
     background: #69C89A !important;
@@ -73,7 +87,7 @@
 
 .work-dialog__info {
   grid-area: d;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .info__header {
@@ -84,13 +98,13 @@
 }
 
 .info__description {
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
   color: var(--font2);
 }
 
 .info__list {
-  font-size: 21px;
+  font-size: 20px;
   line-height: 32px;
   color: var(--font2);
   text-align: left;
@@ -122,6 +136,7 @@
   flex-wrap: wrap;
   gap: 12px;
 
+  height: fit-content;
   > div {
     flex-grow: 1;
   }
@@ -142,7 +157,7 @@
   transition: background-color .4s;
 
   &:hover {
-    background: var(--bg15);
+    background: var(--bg10);
   }
 
   &::before {

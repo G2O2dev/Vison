@@ -1,5 +1,20 @@
-::-webkit-scrollbar {
-  width: 0;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--bg25);
+  border-radius: 9px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  border: 3px solid var(--bg40);
+}
+*::-webkit-scrollbar-thumb:hover {
+  border-color: var(--bg50);
 }
 
 #scroll-bar {
@@ -8,4 +23,8 @@
   right: 0;
   width: 2px;
   background-color: #464646;
+
+  @media (pointer:none) and (pointer:coarse) {
+      display: none !important;
+  }
 }

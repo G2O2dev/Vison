@@ -1,5 +1,3 @@
-// import './scss/index.scss';
-
 import './js/scroll_animation';
 import './js/anchor_animation';
 import './js/input_helper';
